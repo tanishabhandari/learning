@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promise in Javascript</title>
+</head>
+<body>
+    <script>
+        var rise;
+            var result = new Promise ( (resolve,reject) => {
+                rise = setInterval(() => {
+                    console.log("Inside Promise");
+                    // resolve("Successfully done") ;
+                    reject("don't taken")  
+                } , 1000);
+                });
+                console.log("Outside Promise");
+                result
+                .then((response) => {
+                    console.log("You are inside then block with response" + response);
+                    clearInterval (rise);
+                })
+                .catch((err) => {
+                    console.log("Error while handling request"  +  err);
+                })
+
+    </script>
+</body>
+</html>

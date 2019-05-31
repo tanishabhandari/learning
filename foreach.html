@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ForEach loop in Javascript</title>
+    <style>
+        .short{
+            width:100px;
+            height: 100px;
+            background:pink;
+
+        }
+        .long{
+            width: 300px;
+            height: 300px;
+            background:rgb(117, 4, 4);
+            /* display:none; */
+            opacity:0;
+            transition: all 0.25s ease-out 0s;
+        }
+    </style>
+</head>
+<body>
+    <ul id ="menu_container">
+
+    </ul>
+    <div id="short" class="short" onclick="openLongDiv()"></div>
+    <div id="long" class="long"></div>
+    <script>
+        var menu =[ 'home','about', 'contract','gallery','portfolio'];
+        var elem ='';
+        menu.forEach(
+            function ( v , i ){
+                elem = elem + `<li>${v.toUpperCase()}</li>`;
+
+            }
+        );
+        menu_container.innerHTML = elem;
+
+        function openLongDiv(){
+            // badi.style.display = 'block';
+            long.style.opacity = '1';
+        }
+    </script>
+</body>
+</html>
